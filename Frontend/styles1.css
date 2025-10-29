@@ -1,0 +1,157 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+}
+
+/* container */
+.container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Forms */
+.sign-in-form, .sign-up-form {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    transition: 0.6s ease-in-out;
+}
+
+.sign-in-form {
+    left: 0;
+    z-index: 2;
+}
+
+.sign-up-form {
+    left: 100%;
+    z-index: 1;
+    opacity: 0;
+}
+
+
+.container.active .sign-up-form {
+    left: 50%;
+    opacity: 1;
+    z-index: 2;
+}
+
+.container.active .sign-in-form {
+    left: -100%;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* inputs & buttons */
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #f3f3f3;
+    outline: none;
+}
+
+button {
+    width: 50%;
+    padding: 10px;
+    margin-top: 15px;
+    background: #ff758c;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.sign-in-form button a{
+text-decoration: none;
+color: white;
+}
+
+button:hover {
+    background: #ff5772;
+}
+
+/* toggle panel */
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    transition: 0.6s ease-in-out;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container.active .toggle-container{
+    left: 0;
+}
+
+.toggle-panel h1 {
+    margin-top: 1em;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.toggle-panel p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.hidden {
+    background: transparent;
+    border: 1px solid white;
+}
+
+.hidden:hover {
+    background: white;
+    color: #ff758c;
+}
+
+/* social icons */
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
